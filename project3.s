@@ -126,3 +126,12 @@ beq $s2, $t1, printInvalid
 slti $t1, $s3, 1
 li $t2, 1
 beq $t2, $t1 oneChar
+
+j fixedEdgeCase
+
+fixedEdgeCase:
+# first character has been encountered print comma
+li $t0, 1
+beq $s6, $t0, printComma
+
+j rebranch_4
