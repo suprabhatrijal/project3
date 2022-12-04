@@ -60,3 +60,10 @@ seq $t1, $t2, $t1 # $s4 == ENTER
 
 or $t0, $t0, $t1 # $s4 == NULL or $s4 == ENTER
 li $t1, 1
+bne $t1, $t0 sub_a_loop # if not ($s4 == NULL or $s4 == ENTER)then loop
+
+
+li $t0, 1
+beq $s1, $t0, printInvalidExit
+
+j rebranch_3
