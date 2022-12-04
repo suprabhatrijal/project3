@@ -151,3 +151,5 @@ syscall
 addi $a0, $s2, 0
 li $v0, 1
 syscall
+
+j rebranch_2
