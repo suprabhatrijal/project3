@@ -144,3 +144,10 @@ syscall
 
 #print backslash
 li $v0, 11
+addi $a0, $zero, 47
+syscall
+
+# print the decimal number
+addi $a0, $s2, 0
+li $v0, 1
+syscall
