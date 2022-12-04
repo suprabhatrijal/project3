@@ -67,3 +67,21 @@ li $t0, 1
 beq $s1, $t0, printInvalidExit
 
 j rebranch_3
+
+rebranch_3:
+jr $ra
+firstCharTrue:
+# call the sub_b function 
+# lb $a0, 0($s0)
+# li $v0, 11
+# syscall
+li $s1, 0
+
+
+# reserve space for return address
+addi $sp, $sp, -4
+# save the return address in the stack
+sw $ra,  0($sp)
+
+# reserve space for saving $s registers
+addi $sp, $sp, -12
