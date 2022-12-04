@@ -53,3 +53,10 @@ addi $s0, $s0, 1
 
 li $t0, 0
 li $t1, 10
+lb $t2, 0($s0)
+
+seq $t0, $t2, $t0 # $s4 == NULL
+seq $t1, $t2, $t1 # $s4 == ENTER
+
+or $t0, $t0, $t1 # $s4 == NULL or $s4 == ENTER
+li $t1, 1
