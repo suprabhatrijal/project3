@@ -104,3 +104,17 @@ lw $s3, 8($sp)
 addi $sp, $sp, 12
 # restore all the s registers to the previous state
 lw $s0, 0($sp)
+lw $s1, 4($sp)
+lw $s6, 8($sp)
+
+# restore the stack to before saving s registers
+addi $sp, $sp, 12
+
+
+
+# restore return address to $ra
+lw $ra, 0($sp)
+
+
+# restore the stack to before saving return address
+addi $sp, $sp, 4
