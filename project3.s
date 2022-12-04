@@ -36,3 +36,13 @@ beq $t0, $t1, commaEncountered
 
 
 j rebranch_1
+
+rebranch_1:
+
+li $t0, 1
+# if current char is the first character after a comma, branch out
+beq $s1, $t0, firstCharTrue 
+
+
+
+j rebranch_2
