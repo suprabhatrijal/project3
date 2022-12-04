@@ -46,3 +46,10 @@ beq $s1, $t0, firstCharTrue
 
 
 j rebranch_2
+
+rebranch_2:
+li $s6, 1
+addi $s0, $s0, 1
+
+li $t0, 0
+li $t1, 10
