@@ -135,3 +135,12 @@ li $t0, 1
 beq $s6, $t0, printComma
 
 j rebranch_4
+
+rebranch_4:
+# print the length
+addi $a0, $s3, 0
+li $v0, 1
+syscall
+
+#print backslash
+li $v0, 11
