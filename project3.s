@@ -118,3 +118,11 @@ lw $ra, 0($sp)
 
 # restore the stack to before saving return address
 addi $sp, $sp, 4
+
+# if the function returns -1 print invalid input
+li $t1, -1
+beq $s2, $t1, printInvalid
+# if $s1 is less than 1 handle edge case
+slti $t1, $s3, 1
+li $t2, 1
+beq $t2, $t1 oneChar
