@@ -85,3 +85,14 @@ sw $ra,  0($sp)
 
 # reserve space for saving $s registers
 addi $sp, $sp, -12
+
+# save the state of all s registers used in the stack
+sw $s0, 0($sp)
+sw $s1, 4($sp)
+sw $s6, 8($sp)
+
+
+# pass the address of the substring to sub_b
+# reserve safe of return values in the stack
+addi $sp, $sp, -12
+sw $s0, 0($sp)
