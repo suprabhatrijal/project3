@@ -8,3 +8,11 @@ li $v0, 8
 la $a0, input
 li $a1, 1001
 syscall
+
+j exit
+
+
+exit:
+# exit
+li $v0, 10
+syscall
