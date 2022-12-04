@@ -27,3 +27,12 @@ li $s1, 1 # the comma character encountered flag
 li $s6, 0 # the comma character encountered flag
 
 j sub_a_loop
+
+sub_a_loop:
+
+lb $t0, 0($s0) 
+li $t1, 44
+beq $t0, $t1, commaEncountered 
+
+
+j rebranch_1
