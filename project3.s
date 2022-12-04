@@ -96,3 +96,11 @@ sw $s6, 8($sp)
 # reserve safe of return values in the stack
 addi $sp, $sp, -12
 sw $s0, 0($sp)
+jal sub_b
+# save the return value
+lw $s2, 4($sp)
+lw $s3, 8($sp)
+# restore stack to before passing arguments and return values
+addi $sp, $sp, 12
+# restore all the s registers to the previous state
+lw $s0, 0($sp)
