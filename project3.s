@@ -16,3 +16,14 @@ exit:
 # exit
 li $v0, 10
 syscall
+
+############################# main program ends #######################################
+
+###### sub program sub_a starts #################################
+sub_a:
+#
+lw $s0, 0($sp) # the address of the string
+li $s1, 1 # the comma character encountered flag
+li $s6, 0 # the comma character encountered flag
+
+j sub_a_loop
