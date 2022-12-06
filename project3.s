@@ -212,3 +212,16 @@ j rebranch_3
 oneChar:
 li $s3, 1
 j fixedEdgeCase
+
+
+###### sub program sub_a ends #################################
+
+##################### sub program sub_b starts #################################
+sub_b:
+# go through the string find the address of start and end of string removing spaces
+
+# initialize the loop
+li $s0, 0 # flag which is true if first valid char has been encountered
+lw $s2, 0($sp)
+firstPass:
+lb $s4, 0($s2) # current character
