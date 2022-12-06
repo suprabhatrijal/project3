@@ -9,6 +9,13 @@ la $a0, input
 li $a1, 1001
 syscall
 
+# use the input as parameter and call the sub_a function
+la $t0, input
+addi $sp, $sp, -4
+sw $t0, 0($sp)
+jal sub_a
+addi $sp, $sp, 4
+
 j exit
 
 
