@@ -171,3 +171,12 @@ syscall
 
 
 j rebranch_5
+
+
+ommaEncountered:
+# check if previous element is also a comma
+li $t0, 1
+beq $s1, $t0, printInvalid
+li $s1, 1
+
+j rebranch_2
