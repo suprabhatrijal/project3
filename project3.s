@@ -231,3 +231,13 @@ li $t1, 32
 li $t2, 9
 seq $t3, $s4, $t1 # $s4 == SPACE
 seq $t4, $s4, $t2 # $s4 == TAB
+
+or $t1, $t3, $t4 # $s4 == SPACE or $s4 == TAB
+li $t2, 1
+## if not space or tab go to notSpace
+bne $t1, $t2 notSpace # if not ($s4 == SPACE or $s4 == SPACE)
+
+# if it is space or tab continue
+j firstPassCOTD
+
+notSpace:
