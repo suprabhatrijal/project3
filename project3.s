@@ -208,3 +208,7 @@ syscall
 
 
 j rebranch_3 
+
+oneChar:
+li $s3, 1
+j fixedEdgeCase
