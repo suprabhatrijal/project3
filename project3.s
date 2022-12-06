@@ -264,3 +264,10 @@ li $t1, 0
 li $t2, 10
 seq $t3, $s4, $t1 # $s4 == NULL
 seq $t4, $s4, $t2 # $s4 == ENTER
+
+li $t2, 44
+seq $t5, $s4, $t2 # $s4 == ,
+
+or $t1, $t3, $t4 # $s4 == NULL or $s4 == ENTER
+or $t1, $t5, $t1 # $s4 == NULL or $s4 == ENTER or $s4 == ,
+li $t2, 1
