@@ -200,3 +200,11 @@ printInvalidExit:
 li $v0, 11
 addi $a0, $zero, 44
 syscall
+# print question mark
+li $v0, 11
+li $a0, 63
+syscall
+
+
+
+j rebranch_3 
