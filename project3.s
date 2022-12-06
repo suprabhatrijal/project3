@@ -398,3 +398,10 @@ j sub_b_loopCOTD
 sub_b_loopCOTD:
 # set the register t2 to point at the next character
 addi $s0, 1
+addi $t1, $s1, 1
+slt $t1, $s0, $t1
+li $t2, 1
+beq $t1, $t2 sub_b_loop # if current address < the address of null or enter char then loop
+
+# loop ends then add the decimal value to return register and return
+addi $v0, $s3, 0
