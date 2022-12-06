@@ -271,3 +271,10 @@ seq $t5, $s4, $t2 # $s4 == ,
 or $t1, $t3, $t4 # $s4 == NULL or $s4 == ENTER
 or $t1, $t5, $t1 # $s4 == NULL or $s4 == ENTER or $s4 == ,
 li $t2, 1
+li $t2, 1
+bne $t1, $t2 firstPass # if not ($s4 == NULL or $s4 == ENTER or $s4 == ,)then loop
+
+# length of string = end-start +1
+sub $t1, $s6, $s5
+
+addi $t1, $t1, 1
