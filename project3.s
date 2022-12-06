@@ -153,3 +153,12 @@ li $v0, 1
 syscall
 
 j rebranch_2
+
+printComma:
+#print comma
+li $v0, 11
+addi $a0, $zero, 44
+syscall
+
+
+j rebranch_4
