@@ -357,3 +357,13 @@ slti $t1, $s4, 90
 
 and $t0, $t0, $t1
 li $t1, 1
+# if char >= 65 and char < 90
+beq $t0, $t1, Upper
+
+j invalidChar
+
+Number:
+# convert ascii into number
+addi $t1, $s4, -48
+# sum = sum*35 + cur_number
+li $t2, 35
