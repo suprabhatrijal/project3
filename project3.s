@@ -241,3 +241,11 @@ bne $t1, $t2 notSpace # if not ($s4 == SPACE or $s4 == SPACE)
 j firstPassCOTD
 
 notSpace:
+li $t1, 1
+# if the first non space non tab char encountered store the location and continue
+beq $s0, $t1, firstCharEncountered
+# else store the location of current non space non tab char to $s5
+addi $s5, $s2, 0 # save the address in #s5
+li $s0, 1
+
+j firstPassCOTD
