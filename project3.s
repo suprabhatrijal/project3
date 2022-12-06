@@ -390,3 +390,11 @@ addi $t1, $s4, -55
 # sum = sum*35 + cur_number
 li $t2, 35
 mult $t2, $s3
+mflo $s3
+add $s3, $s3, $t1 
+
+j sub_b_loopCOTD
+
+sub_b_loopCOTD:
+# set the register t2 to point at the next character
+addi $s0, 1
