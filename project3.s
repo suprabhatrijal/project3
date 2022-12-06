@@ -297,3 +297,11 @@ sw $v1, 8($sp)
 addi $s0, $s5, 0  # Address of the start of the string
 addi $s1, $s6, 0 # Address of the end of the string
 
+# reset all unused $s registers
+li $s2, 0
+li $s4, 0
+li $s5, 0
+li $s6, 0
+
+# initialize the second pass
+li $s3, 0 # sum of all numbers
