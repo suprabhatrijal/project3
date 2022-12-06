@@ -419,3 +419,16 @@ li $s6, 0
 jr $ra
 
 invalidChar:
+li $v0, -1
+sw $v0, 4($sp)
+jr $ra
+
+###### sub program sub_b ends #################################
+
+# sub_b usage example
+# addi $sp, $sp, -12
+# sw $t0, 0($sp)
+# jal sub_b
+# lw $s0, 4($sp)
+# lw $s1, 8($sp)
+# addi $sp, $sp, 12
