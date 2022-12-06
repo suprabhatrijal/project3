@@ -50,8 +50,6 @@ li $t0, 1
 # if current char is the first character after a comma, branch out
 beq $s1, $t0, firstCharTrue 
 
-
-
 j rebranch_2
 
 rebranch_2:
@@ -77,6 +75,7 @@ j rebranch_3
 
 rebranch_3:
 jr $ra
+
 firstCharTrue:
 # call the sub_b function 
 # lb $a0, 0($s0)
@@ -117,11 +116,8 @@ lw $s6, 8($sp)
 # restore the stack to before saving s registers
 addi $sp, $sp, 12
 
-
-
 # restore return address to $ra
 lw $ra, 0($sp)
-
 
 # restore the stack to before saving return address
 addi $sp, $sp, 4
@@ -167,7 +163,6 @@ li $v0, 11
 addi $a0, $zero, 44
 syscall
 
-
 j rebranch_4
 
 printCommaError:
@@ -179,8 +174,7 @@ syscall
 
 j rebranch_5
 
-
-ommaEncountered:
+commaEncountered:
 # check if previous element is also a comma
 li $t0, 1
 beq $s1, $t0, printInvalid
@@ -207,6 +201,7 @@ printInvalidExit:
 li $v0, 11
 addi $a0, $zero, 44
 syscall
+
 # print question mark
 li $v0, 11
 li $a0, 63
@@ -219,7 +214,6 @@ j rebranch_3
 oneChar:
 li $s3, 1
 j fixedEdgeCase
-
 
 ###### sub program sub_a ends #################################
 
@@ -271,13 +265,11 @@ li $t1, 0
 li $t2, 10
 seq $t3, $s4, $t1 # $s4 == NULL
 seq $t4, $s4, $t2 # $s4 == ENTER
-
 li $t2, 44
 seq $t5, $s4, $t2 # $s4 == ,
 
 or $t1, $t3, $t4 # $s4 == NULL or $s4 == ENTER
 or $t1, $t5, $t1 # $s4 == NULL or $s4 == ENTER or $s4 == ,
-li $t2, 1
 li $t2, 1
 bne $t1, $t2 firstPass # if not ($s4 == NULL or $s4 == ENTER or $s4 == ,)then loop
 
@@ -313,6 +305,8 @@ li $s6, 0
 # initialize the second pass
 li $s3, 0 # sum of all numbers
 
+j sub_b_loop
+
 sub_b_loop:
 beq $s0, $zero, invalidChar
 lb $s4, 0($s0) # current character
@@ -333,7 +327,6 @@ li $t1, 1
 # if char >= 48 and char < 58
 beq $t0, $t1, Number
 
-
 # character falls in the range  'a' to 'y'
 
 # char < 97
@@ -349,7 +342,6 @@ and $t0, $t0, $t1
 li $t1, 1
 # if char >= 97 and char < 123
 beq $t0, $t1, Lower
-
 
 # character falls in the range  'A' to 'Y'
 
@@ -405,6 +397,7 @@ j sub_b_loopCOTD
 sub_b_loopCOTD:
 # set the register t2 to point at the next character
 addi $s0, 1
+
 addi $t1, $s1, 1
 slt $t1, $s0, $t1
 li $t2, 1
