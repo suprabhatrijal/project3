@@ -249,3 +249,11 @@ addi $s5, $s2, 0 # save the address in #s5
 li $s0, 1
 
 j firstPassCOTD
+
+firstCharEncountered:
+addi $s6, $s2, 0 # save the address in #s5
+j firstPassCOTD
+
+firstPassCOTD:
+# set the register t2 to point at the next character
+addi $s2, 1
