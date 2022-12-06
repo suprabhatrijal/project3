@@ -162,3 +162,12 @@ syscall
 
 
 j rebranch_4
+
+printCommaError:
+#print comma
+li $v0, 11
+addi $a0, $zero, 44
+syscall
+
+
+j rebranch_5
