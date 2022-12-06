@@ -305,3 +305,15 @@ li $s6, 0
 
 # initialize the second pass
 li $s3, 0 # sum of all numbers
+
+sub_b_loop:
+beq $s0, $zero, invalidChar
+lb $s4, 0($s0) # current character
+
+# character falls in the range  '0' to '9'
+
+# char < 47
+slti $t0, $s4, 48 
+
+# not (char < 48)  ===> ( char >= 48)
+nor $t0, $t0, $zero
