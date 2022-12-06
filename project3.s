@@ -405,3 +405,10 @@ beq $t1, $t2 sub_b_loop # if current address < the address of null or enter char
 
 # loop ends then add the decimal value to return register and return
 addi $v0, $s3, 0
+sw $v0, 4($sp)
+
+# reset all the $s registers
+li $s0, 0
+li $s1, 0
+li $s2, 0
+li $s3, 0
