@@ -186,3 +186,11 @@ printInvalid:
 li $t0, 1
 beq $s6, $t0, printCommaError
 j rebranch_5
+
+rebranch_5:
+# print question mark
+li $v0, 11
+li $a0, 63
+syscall
+
+j rebranch_2
