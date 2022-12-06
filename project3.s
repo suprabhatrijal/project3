@@ -412,3 +412,10 @@ li $s0, 0
 li $s1, 0
 li $s2, 0
 li $s3, 0
+li $s4, 0
+li $s5, 0
+li $s6, 0
+# return to main program
+jr $ra
+
+invalidChar:
