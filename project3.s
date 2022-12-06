@@ -317,3 +317,11 @@ slti $t0, $s4, 48
 
 # not (char < 48)  ===> ( char >= 48)
 nor $t0, $t0, $zero
+
+# char < 58
+slti $t1, $s4, 58
+
+and $t0, $t0, $t1
+li $t1, 1
+# if char >= 48 and char < 58
+beq $t0, $t1, Number
