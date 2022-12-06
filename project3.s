@@ -180,3 +180,9 @@ beq $s1, $t0, printInvalid
 li $s1, 1
 
 j rebranch_2
+
+printInvalid:
+# first character has been encountered print comma
+li $t0, 1
+beq $s6, $t0, printCommaError
+j rebranch_5
